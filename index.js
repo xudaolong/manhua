@@ -29,6 +29,5 @@ const books = [
             link: 'div.fed-col-xs12.fed-col-sm8.fed-col-md9 > dl > dd > ul > li:nth-child(4) > a@href'
         }
     ])))
-    console.log(data)
 })()
 

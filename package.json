@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
+    "start": "node -e \"require('./dist/manhua.js')\"",
+    "build": "webpack index.js -o dist/manhua.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "emitter": "0.0.5",
+    "webpack": "^4.42.1",
+    "webpack-node-externals": "^1.7.2",
     "x-ray": "^2.3.4"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
   }
 }
