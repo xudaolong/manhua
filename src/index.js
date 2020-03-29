@@ -1,6 +1,5 @@
 const fs = require('fs')
 const { books } = require('./config');
-const { formatDate } = require('./utils');
 const { html } = require('./template/manhua');
 const x = require('x-ray')();
 
@@ -15,8 +14,7 @@ const x = require('x-ray')();
             link: 'div.fed-col-xs12.fed-col-sm8.fed-col-md9 > dl > dd > ul > li:nth-child(4) > a@href'
         }
     )))
-    const today = formatDate()
-    const manhuaToday = manhua.filter(o => o.updated === today)
+    const manhuaToday = manhua.sort((a, b) => new Date(b.updated) - new Date(a.updated))
     fs.writeFileSync('manhua.html', html(manhuaToday))
 })()
 
