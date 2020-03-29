@@ -26,8 +26,6 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: 每日动画更新
-          # Literal body:
-          body: 更新内容-${{github.repository}}!
           # Read file contents as body:
           body: file://manhua.txt
           to: xudaolong@vip.qq.com
