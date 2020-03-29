@@ -1,6 +1,7 @@
 const fs = require('fs')
 const { books } = require('./config');
 const { formatDate } = require('./utils');
+const { html } = require('./template/manhua');
 const x = require('x-ray')();
 
 (async () => {
@@ -14,6 +15,6 @@ const x = require('x-ray')();
     })))
     const today = formatDate()
     const manhuaToday = manhua.filter(o => o.updated === today)
-    fs.writeFileSync('manhua.txt', JSON.stringify(manhuaToday, '', '\t'))
+    fs.writeFileSync('manhua.html', html(manhuaToday))
 })()
 
