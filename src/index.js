@@ -5,7 +5,7 @@ const x = require('x-ray')();
 
 (async () => {
     const manhua = await Promise.all(books.map(async o => x(
-        `https://www.onemanhua.com/${o.id}/`,
+        `https://www.cocomanhua.com/${o.id}/`,
         'body > div.fed-main-info.fed-min-width > div > div:nth-child(1)',
         {
             name: 'div.fed-col-xs12.fed-col-sm8.fed-col-md9 > dl > dd > h1',
